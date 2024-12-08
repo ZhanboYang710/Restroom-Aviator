@@ -1,12 +1,14 @@
-import { MongoClient } from "mongodb";
-import dotenv from "dotenv";
+// import { MongoClient } from "mongodb";
+// import dotenv from "dotenv";
+const { MongoClient } = require("mongodb");
+const dotenv = require("dotenv");
 
 // Load environment variables from .env file
 dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI as string;
-const DB_NAME = "bu-bathroom-ratings";
-const RESTROOMS_COLLECTION = "restrooms";
+const DB_NAME = "cs391-final-projects";
+const RESTROOMS_COLLECTION = "restroom_aviator";
 
 const client = new MongoClient(MONGO_URI);
 
