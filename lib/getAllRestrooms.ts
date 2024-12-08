@@ -7,12 +7,11 @@ export async function getRestrooms(filters: Partial<restroom>): Promise<restroom
     const data = await collection.find(filters).toArray();
 
     const restrooms: restroom[] = data.map((p) => ({
-
         campus: p.campus,
         building: p.building,
         gender: p.gender,
         overall: p.overall,
-        id: p.id,
+        id: p.id.toString(),
         location: p.location,
         floor: p.floor,
         accessible: p.accessible,
