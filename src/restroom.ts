@@ -4,13 +4,16 @@ export interface restroom{
     building: string;
     floor: number;
     capacity: number;
-    type: string;
-    rating: number;
-    pro: string[];
-    con: string[];
+    gender: string;
+    overall_rating: number;
+    odor: number;
+    cleanliness: number;
+    toliet_paper: number;
 }
 
 export interface thumbnail{
-    
-
+    building: string;
+    floor: number;
+    gender: string;
+    overall_rating: number;
 }
