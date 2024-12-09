@@ -1,3 +1,6 @@
+// Contributed by Akemi
+// Data Collection Retrieving Handler function
+
 import { MongoClient, ObjectId } from "mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
 import dotenv from "dotenv";
@@ -20,6 +23,8 @@ async function connect() {
   return client.db(DB_NAME);
 }
 
+// Handler of restroom collection data that process the query and 
+// set the fields to the right type as declared in type.ts
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   console.log("Received request:", req.query);
 
@@ -40,6 +45,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (gender) {
       query.gender = gender;
     }
+    // accessible is of type boolean in MongoDb, need type string of our type definition
     if (accessible) {
       query.accessible = accessible === 'true';
     }
@@ -48,7 +54,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const restrooms = await collection.find(query).toArray();
     console.log(restrooms[0])
-    // restrooms[0]._id.toHexString()
+    // restrooms[0]._id.toHexString() ; testing code
+        // setting up id attribute of restroom object based on _id in MongoDb
     restrooms.map( (restroom_instance) => 
       restroom_instance.id = restroom_instance._id.toHexString()
     )

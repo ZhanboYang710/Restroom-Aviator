@@ -1,3 +1,6 @@
+// contributed by Akemi, partially contributed by Zhanbo
+// type definitions of objects
+
 export interface restroom {
   id: string;
   location: string;

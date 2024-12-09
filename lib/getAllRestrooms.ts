@@ -1,11 +1,15 @@
+// contribued by Akemi
+// A restroom record fetcher based on filter criterias as prop
 import { getCollection, RESTROOMS_COLLECTION } from '../db';
 import { restroom } from '../types';
 
 // Fetch all restrooms with optional filters
+// when filter is {}, the selection is all the restrooms
 export async function getRestrooms(filters: Partial<restroom>): Promise<restroom[]> {
     const collection = await getCollection(RESTROOMS_COLLECTION);
     const data = await collection.find(filters).toArray();
 
+    // mapping fields of data record to the type of the object
     const restrooms: restroom[] = data.map((p) => ({
         campus: p.campus,
         building: p.building,
