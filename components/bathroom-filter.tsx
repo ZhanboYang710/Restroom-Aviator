@@ -1,5 +1,21 @@
 import React from "react";
-import { use, useState } from "react";
+import styled from "styled-components";
+
+
+const StyledDiv = styled.div`
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #00ccff;
+`
+const StyledLabel = styled.label`
+    color: black;
+`
+const StyledSelect = styled.select`
+    width: 12vw;
+`
+
 
 type BathroomFilterProps = {
     filters: {
@@ -32,11 +48,11 @@ export default function BathroomFilter({ filters, setFilters }: BathroomFilterPr
     };
 
     return (
-        <div>
+        <StyledDiv>
             {/* The following is heavily inspired by the old page.tsx contributed by Akemi */}
-            <label>
+            <StyledLabel>
                 Campus:
-                <select
+                <StyledSelect
                 value={filters.campus}
                 onChange={(e) => setFilters({ ...filters, campus: e.target.value, building: "" })}
                 >
@@ -46,12 +62,12 @@ export default function BathroomFilter({ filters, setFilters }: BathroomFilterPr
                     {campus}
                     </option>
                 ))}
-                </select>
-            </label>
+                </StyledSelect>
+            </StyledLabel>
 
-            <label>
+            <StyledLabel>
                 Building:
-                <select
+                <StyledSelect
                 value={filters.building}
                 onChange={(e) => setFilters({ ...filters, building: e.target.value })}
                 disabled={!filters.campus}
@@ -63,27 +79,27 @@ export default function BathroomFilter({ filters, setFilters }: BathroomFilterPr
                         {building}
                     </option>
                     ))}
-                </select>
-            </label>
+                </StyledSelect>
+            </StyledLabel>
 
-            <label>
+            <StyledLabel>
                 Gender:
-                <select onChange={(e) => setFilters({ ...filters, gender: e.target.value })}>
+                <StyledSelect onChange={(e) => setFilters({ ...filters, gender: e.target.value })}>
                 <option value="">All</option>
                 <option value="Men">Men</option>
                 <option value="Women">Women</option>
                 <option value="Gender Neutral">Gender Neutral</option>
-                </select>
-            </label>
+                </StyledSelect>
+            </StyledLabel>
 
-            <label>
+            <StyledLabel>
                 Accessible:
-                <select onChange={(e) => setFilters({ ...filters, accessible: e.target.value })}>
+                <StyledSelect onChange={(e) => setFilters({ ...filters, accessible: e.target.value })}>
                 <option value="">All</option>
                 <option value="true">Yes</option>
                 <option value="false">No</option>
-                </select>
-            </label>
-        </div>
+                </StyledSelect>
+            </StyledLabel>
+        </StyledDiv>
     )
 }

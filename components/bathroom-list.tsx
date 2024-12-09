@@ -3,6 +3,26 @@ import BathroomCard from "./ bathroom-card";
 import { restroom } from "@/types";
 import { useState, useEffect } from "react";
 import { getRestrooms } from "@/lib/getAllRestrooms";
+import styled from "styled-components";
+
+
+const StyledContainer = styled.div`
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 1rem; 
+    background-color: #f2f2f2; 
+    padding: 1rem;
+`
+const StyledDiv = styled.div`
+    border-radius: 0.5rem; 
+    border-width: 1px; 
+    background-color: purple; 
+    padding: 0.3rem; 
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0,0,0,0.1), 0 4px 6px -4px rgb(0,0,0,0.1); 
+    transition-property: box-shadow; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    transition-duration: 150ms;
+`
 
 type BathroomListProps = {
     filters : {
@@ -12,6 +32,7 @@ type BathroomListProps = {
         accessible: string,
     };
 };
+
 
 export default function BathroomList( {filters}: BathroomListProps ) {
     const [restrooms, setRestrooms] = useState<restroom[]>([]);
@@ -46,15 +67,12 @@ export default function BathroomList( {filters}: BathroomListProps ) {
     }
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 bg-yellow-200">
-          {restrooms.map((restroom_instance) => (
-            <div
-              key={restroom_instance.id}
-              className="bg-sky-200 shadow-md rounded-lg border border-gold-300 p-4 hover:shadow-lg transition-shadow"
-            >
-              <BathroomCard restroom={restroom_instance} />
-            </div>
+        <StyledContainer>
+            {restrooms.map((restroom_instance) => (
+                <StyledDiv key={restroom_instance.id}>
+                    <BathroomCard restroom={restroom_instance} />
+                </StyledDiv>
           ))}
-        </div>
-      );
+        </StyledContainer>
+    );
 }
