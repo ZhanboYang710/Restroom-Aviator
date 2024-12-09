@@ -1,3 +1,6 @@
+// setting up connection to MongoDb
+// Contributed by Akemi
+
 import { MongoClient, Db, Collection } from "mongodb";
 
 const MONGO_URI = process.env.MONGO_URI as string;

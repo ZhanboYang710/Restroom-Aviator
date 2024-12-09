@@ -1,6 +1,7 @@
+// contribued by Zhanbo
+// restroom filter selection component
 import React from "react";
 import styled from "styled-components";
-
 
 const StyledDiv = styled.div`
     padding: 0 5vw;
@@ -35,7 +36,8 @@ type BathroomFilterProps = {
     >;
 };
 
-
+// handles selection of criteria, and update the filters 
+// with the setFilters function
 export default function BathroomFilter({ filters, setFilters }: BathroomFilterProps) {
     const campusOptions = ["East", "Central", "South", "West"]
     const buildingOptions : { [key: string]: string[] } 
@@ -55,6 +57,7 @@ export default function BathroomFilter({ filters, setFilters }: BathroomFilterPr
                 <StyledSelect
                 value={filters.campus}
                 onChange={(e) => setFilters({ ...filters, campus: e.target.value, building: "" })}
+                // onChange action triggers the update of filters
                 >
                 <option value="">All</option>
                 {campusOptions.map((campus) => (

@@ -1,3 +1,6 @@
+// Contribued by Akemi
+// Component function to create reivew in restroom collection
+
 import { ObjectId } from "mongodb";
 import { Review } from "../types";
 import { getCollection, RESTROOMS_COLLECTION } from "../db";
