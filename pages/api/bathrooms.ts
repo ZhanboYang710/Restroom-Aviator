@@ -47,6 +47,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.log("Query:", query);
 
     const restrooms = await collection.find(query).toArray();
+    console.log(restrooms[0])
+    // restrooms[0]._id.toHexString()
+    restrooms.map( (restroom_instance) => 
+      restroom_instance.id = restroom_instance._id.toHexString()
+    )
     res.status(200).json(restrooms);
   } catch (error) {
     console.error("Error:", error);

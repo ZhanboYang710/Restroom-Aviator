@@ -22,6 +22,7 @@ export async function getRestrooms(filters: Partial<restroom>): Promise<restroom
         reviews: p.reviews
     }));
 
+    console.log(restrooms)
     return restrooms;
 }
 
