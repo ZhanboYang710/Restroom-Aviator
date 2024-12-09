@@ -38,7 +38,7 @@ export default function BathroomList( {filters}: BathroomListProps ) {
     const [restrooms, setRestrooms] = useState<restroom[]>([]);
     const [loading, setLoading] = useState(true);
 
-    // heaviliy inspired by Akemi's old page.tsx
+    // heavily inspired by Akemi's old page.tsx
     useEffect( () => {
         async function fetchRestrooms() {
             try {

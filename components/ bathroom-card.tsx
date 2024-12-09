@@ -3,14 +3,14 @@ import Link from "next/link";
 import { restroom } from "../types";
 import styled from "styled-components";
 
-const StyledConatiner = styled.div`
+const StyledContainer = styled.div`
     padding: 1rem;
     background-color: Beige;
 `
 
 // style={{ cursor: "pointer", border: "1px solid #ddd", padding: "10px", margin: "10px 0" }}
 const StyledDiv = styled.div`
-    border-width = 2px;
+    border-width: 2px;
     color: black;
 `
 const StyledLink = styled(Link)`
@@ -22,7 +22,7 @@ type BathroomProps = {
 
 export default function BathroomCard( { restroom }: BathroomProps) {
     return (
-        <StyledConatiner>
+        <StyledContainer>
         <StyledLink href={`/restroom/${restroom.id}`}>
             <StyledDiv>
                 <h2>{restroom.building}</h2>
@@ -32,6 +32,6 @@ export default function BathroomCard( { restroom }: BathroomProps) {
                 <p>Overall Rating: {restroom.ratings?.overall || "N/A"}</p>
             </StyledDiv>
         </StyledLink>
-        </StyledConatiner>
+        </StyledContainer>
     )
 }

@@ -39,7 +39,7 @@ type BathroomFilterProps = {
 export default function BathroomFilter({ filters, setFilters }: BathroomFilterProps) {
     const campusOptions = ["East", "Central", "South", "West"]
     const buildingOptions : { [key: string]: string[] } 
-        // use a dict structure since basically buidlings are children of campus
+        // use a dict structure since basically buildings are children of campus
     = {
         East: ["Towers"],
         Central: ["CAS", "GSU", "Warren"],

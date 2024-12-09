@@ -5,8 +5,9 @@ if (!MONGO_URI) {
   throw new Error("MONGO_URI environment variable is undefined");
 }
 
-const DB_NAME = "cs391-final-projects";
-export const RESTROOMS_COLLECTION = "restroom_aviator";
+const DB_NAME = "bu-bathroom-ratings";
+export const RESTROOMS_COLLECTION = "restrooms";
+
 
 let client: MongoClient | null = null;
 let db: Db | null = null;

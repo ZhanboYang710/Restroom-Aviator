@@ -6,8 +6,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI as string;
-const DB_NAME = "cs391-final-projects";
-const RESTROOMS_COLLECTION = "restroom_aviator";
+const DB_NAME = "bu-bathroom-ratings";
+export const RESTROOMS_COLLECTION = "restrooms";
 
 const client = new MongoClient(MONGO_URI);
 let isConnected = false;
