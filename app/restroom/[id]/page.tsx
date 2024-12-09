@@ -1,68 +1,31 @@
-"use client";
+import { getRestroomById } from '../../../lib/getRestroomById';
+import { restroom } from '@/types';
 
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import {MiniHeader} from "@/components/header";
+interface DynamicPageProps {
+  params: { id: string };
+}
 
-const DynamicPage = () => {
-    const pathname = usePathname();
-    const id = pathname.split("/").pop(); // Extract the dynamic ID from the pathname
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+export default async function DynamicPage({ params }: DynamicPageProps) {
+  const { id } = params;
+  const restroom = await getRestroomById(id);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`/api/bathrooms?id=${id}`);
-                if (!response.ok) {
-                    throw new Error("Failed to fetch data");
-                }
-                const result = await response.json();
-                setData(result);
-            } catch (err) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        };
+  if (!restroom) {
+    return <p>Restroom not found</p>;
+  }
 
-        if (id) {
-            fetchData();
-        }
-    }, [id]);
-
-    if (loading) {
-        return <p>Loading...</p>;
-    }
-
-    if (error) {
-        return <p>Error: {error}</p>;
-    }
-
-    if (!data) {
-        return <p>No data available for this restroom.</p>;
-    }
-
-    return (
-        <div style={{ padding: "2rem" }}>
-            <MiniHeader/>
-            <h1>{data.name}</h1>
-            <p>{data.description}</p>
-            <p>
-                <strong>Location:</strong> {data.location}
-            </p>
-            <p>
-                <strong>Facilities:</strong>{" "}
-                {Array.isArray(data.facilities)
-                    ? data.facilities.join(", ")
-                    : "No facilities listed"}
-            </p>
-            <p>
-                <strong>Rating:</strong> {data.rating} / 5
-            </p>
-        </div>
-    );
-};
-
-export default DynamicPage;
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h1>Details for {restroom.building} - {restroom.location}</h1>
+      <p><strong>Campus:</strong> {restroom.campus}</p>
+      <p><strong>Building:</strong> {restroom.building}</p>
+      <p><strong>Floor:</strong> {restroom.floor}</p>
+      <p><strong>Gender:</strong> {restroom.gender}</p>
+      <p><strong>Accessible:</strong> {restroom.accessible ? "Yes" : "No"}</p>
+      <p><strong>Odor Rating:</strong> {restroom.ratings.odor}</p>
+      <p><strong>Cleanliness Rating:</strong> {restroom.ratings.cleanliness}</p>
+      <p><strong>Privacy Rating:</strong> {restroom.ratings.privacy}</p>
+      <p><strong>Overall Rating:</strong> {restroom.ratings.overall}</p>
+      <p><strong>Number of Ratings:</strong> {restroom.ratingCount}</p>
+    </div>
+  );
+}
