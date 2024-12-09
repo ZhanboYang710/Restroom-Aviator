@@ -1,3 +1,5 @@
+// Contribued by Akemi
+
 import { ObjectId } from 'mongodb';
 import { restroom } from '../types';
 import { getCollection } from '../db';

@@ -1,3 +1,6 @@
+// script to setting up the database in MongoDb
+// contribued by Akemi
+
 // import { MongoClient } from "mongodb";
 // import dotenv from "dotenv";
 const { MongoClient } = require("mongodb");
