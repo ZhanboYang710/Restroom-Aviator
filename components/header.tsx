@@ -1,8 +1,8 @@
-// Header Component
+// Header Component by Shangyuan Chen
 import styled from 'styled-components';
 
 
-
+//Header styling
 const Header = styled.header`
   display: flex;
   align-items: center;
@@ -32,6 +32,7 @@ const NavLink = styled.a`
   }
 `;
 
+//Header for main pages
 export const AppHeader = () => (
     <Header>
         <Title>BU Restroom Rater</Title>
@@ -43,7 +44,7 @@ export const AppHeader = () => (
     </Header>
 );
 
-
+//Header for Restroom Details Page
 export const MiniHeader = () => {
     const goBack = () => {
         window.history.back();
