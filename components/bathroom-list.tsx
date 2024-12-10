@@ -1,3 +1,4 @@
+// By Leo commented by Shangyuan
 import React from "react";
 import BathroomCard from "./bathroom-card";
 import { restroom } from "@/types";
@@ -25,6 +26,7 @@ const StyledDiv = styled.div`
   transition-duration: 150ms;
 `;
 
+// Define the type for the component props
 type BathroomListProps = {
     filters : {
         campus: string,
@@ -34,12 +36,13 @@ type BathroomListProps = {
     };
 };
 
-
+// Main component for displaying the list of restrooms
 export default function BathroomList( {filters}: BathroomListProps ) {
     const [restrooms, setRestrooms] = useState<restroom[]>([]);
     const [loading, setLoading] = useState(true);
 
     // heaviliy inspired by Akemi's old page.tsx
+    // Fetch restroom data whenever filters change
     useEffect( () => {
         async function fetchRestrooms() {
             try {
