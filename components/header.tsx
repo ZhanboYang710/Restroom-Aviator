@@ -1,6 +1,8 @@
+//Shangyuan Chen: Header Component for main pages
 import styled from 'styled-components';
 import Link from 'next/link';
 
+//styling wrappers
 const HeaderWrapper = styled.header`
     display: flex;
     justify-content: space-between;
@@ -32,6 +34,8 @@ const NavLinks = styled.nav`
     }
 `;
 
+
+//main Header contents and links
 export default function NewHeader() {
     return (
         <HeaderWrapper>
