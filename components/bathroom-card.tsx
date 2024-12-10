@@ -1,8 +1,10 @@
+//By Leo
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { restroom } from "@/types";
 
+// Styled container for the card with hover effect
 const StyledContainer = styled.div`
   padding: 1rem;
   background-color: #2c3e50;
@@ -24,10 +26,12 @@ const StyledLink = styled(Link)`
   color: inherit;
 `;
 
+// Props type definition for the component
 type BathroomProps = {
   restroom: restroom;
 };
 
+// Functional component for rendering restroom details
 export default function BathroomCard({ restroom }: BathroomProps) {
   return (
     <StyledContainer>
