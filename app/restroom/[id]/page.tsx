@@ -1,4 +1,4 @@
-import { getRestroomById } from '../../../lib/getRestroomById';
+import { getRestroomById } from '@/lib/getRestroomById';
 
 interface DynamicPageProps {
   params: { id: string };
