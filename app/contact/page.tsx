@@ -3,6 +3,7 @@
 import styled from 'styled-components';
 import NewHeader from '@/components/header';
 
+//styling wrappers
 const ContactWrapper = styled.div`
   padding: 20px;
   max-width: 800px;
@@ -32,7 +33,7 @@ const li = styled.li`
 
 
 
-
+//Main Contact contents
 export default function Contact() {
     return (
         <>
