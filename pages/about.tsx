@@ -1,8 +1,8 @@
-// About Page by Shangyuan Chen
+// pages/about.tsx
 import styled from 'styled-components';
-import {AppHeader} from '../components/header';
+import NewHeader from '@/components/header';
 
-//Styling using styled-components
+
 const AboutWrapper = styled.div`
     padding: 20px;
     max-width: 800px;
@@ -24,11 +24,10 @@ const Description = styled.p`
     text-align: justify;
 `;
 
-//Main About Page Contents
 export default function About() {
     return (
         <>
-            <AppHeader />
+            <NewHeader />
             <AboutWrapper>
                 <Title>About Us</Title>
                 <Description>
@@ -40,4 +39,5 @@ export default function About() {
         </>
     );
 }
+
 
