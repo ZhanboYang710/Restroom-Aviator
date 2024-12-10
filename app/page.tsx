@@ -1,10 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { restroom } from "../types";
 import styled from "styled-components";
 import BathroomFilter from "@/components/bathroom-filter";
 import BathroomList from "@/components/bathroom-list";
-import AppHeader from "@/components/header";
+import { AppHeader } from "@/components/header";
 
 
 const StyledDiv = styled.div`

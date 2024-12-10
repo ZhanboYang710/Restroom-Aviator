@@ -1,5 +1,4 @@
 import { getRestroomById } from '../../../lib/getRestroomById';
-import { restroom } from '@/types';
 
 interface DynamicPageProps {
   params: { id: string };
