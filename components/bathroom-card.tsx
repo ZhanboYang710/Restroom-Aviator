@@ -1,4 +1,8 @@
-// By Leo commented by Shangyuan
+
+
+// contributed by Zhanbo
+// single restroom display component
+
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
@@ -31,12 +35,15 @@ type BathroomProps = {
   restroom: restroom;
 };
 
-// Functional component for rendering restroom details
+
+// displaying information of a single restroom in a Card component
+
 export default function BathroomCard({ restroom }: BathroomProps) {
   return (
     <StyledContainer>
-      <StyledLink href={`/restroom/${restroom.id}`}>
+      <StyledLink href={`/restroom/${restroom.id}`}> {/* link to dynamically routing page */}
         <StyledDiv>
+          {/* attributes of restrooms to be displayed on a Card */}
           <h2>{restroom.building}</h2>
           <p>Floor: {restroom.floor}</p>
           <p>Gender: {restroom.gender}</p>

@@ -1,4 +1,7 @@
-// By Leo commented by Shangyuan
+
+// contributed by Zhanbo
+// restroom list display component
+
 import React from "react";
 import BathroomCard from "./bathroom-card";
 import { restroom } from "@/types";
@@ -9,6 +12,7 @@ import styled from "styled-components";
 const StyledContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    // create a wrapping of the cards
   gap: 1rem;
   background-color: black;
   padding: 1rem;
@@ -35,13 +39,18 @@ type BathroomListProps = {
     };
 };
 
-// Main component for displaying the list of restrooms
+
+// retrieve restrooms based on selected filters
+
 export default function BathroomList( {filters}: BathroomListProps ) {
     const [restrooms, setRestrooms] = useState<restroom[]>([]);
     const [loading, setLoading] = useState(true);
 
     // heaviliy inspired by Akemi's old page.tsx
-    // Fetch restroom data whenever filters change
+
+    // useEffect() function that handles the retriving of data
+    // records, subject to changes of filters
+
     useEffect( () => {
         async function fetchRestrooms() {
             try {
@@ -71,6 +80,8 @@ export default function BathroomList( {filters}: BathroomListProps ) {
 
     return (
         <StyledContainer>
+            {/* generate the list by mapping function taking selected restrooms
+            and create a Card for each of them */}
             {restrooms.map((restroom_instance) => (
                 <StyledDiv key={restroom_instance.id}>
                     <BathroomCard restroom={restroom_instance} />
