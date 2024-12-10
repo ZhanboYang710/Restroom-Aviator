@@ -21,7 +21,7 @@ const Title = styled.h1`
 const Description = styled.p`
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #34495e;
+    color: 2c3e50;
     text-align: justify;
 `;
 
