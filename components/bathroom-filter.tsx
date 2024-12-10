@@ -43,10 +43,10 @@ export default function BathroomFilter({ filters, setFilters }: BathroomFilterPr
     const buildingOptions : { [key: string]: string[] } 
         // use a dict structure since basically buildings are children of campus
     = {
-        East: ["Towers"],
-        Central: ["CAS", "GSU", "Warren"],
+        East: ["COM", "Questrom", "Towers", "Marciano", "Myles", "Kilachand", "Danielsen"],
+        Central: ["CAS", "GSU", "CDS", "Mugar", "Warren", "Sargent", "Law"],
         South: ["Photonics"],
-        West: ["CGS", "West Dining Hall"],
+        West: ["CGS", "West Dining Hall", "FitRec", "Stuvi1", "Stuvi2", "Sleeper", "CFA", "Agganis"],
     };
 
     return (

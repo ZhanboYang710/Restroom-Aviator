@@ -1,4 +1,5 @@
 // pages/about.tsx
+"use client"
 import styled from 'styled-components';
 import NewHeader from '@/components/header';
 

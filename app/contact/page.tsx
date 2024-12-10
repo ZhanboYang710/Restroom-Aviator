@@ -1,6 +1,7 @@
 // pages/contact.tsx
+"use client"
 import styled from 'styled-components';
-import NewHeader from '../components/header';
+import NewHeader from '@/components/header';
 
 const ContactWrapper = styled.div`
 {

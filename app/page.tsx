@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import BathroomFilter from "@/components/bathroom-filter";
 import BathroomList from "@/components/bathroom-list";
-import { AppHeader } from "@/components/header";
+import NewHeader from "@/components/header";
+import GlobalStyle from '@/styles/globalStyles';
+import App from "next/app";
 
 
 const StyledDiv = styled.div`
@@ -19,11 +21,15 @@ export default function Page() {
     });
 
     return (
+        <>
+        <GlobalStyle />
+        <NewHeader />
         <StyledDiv> 
-            <AppHeader/>
             <BathroomFilter filters={filters} setFilters={setFilters} />
             <BathroomList filters={filters} />
         </StyledDiv>
+        </>
+        
     );
 }
 

@@ -28,9 +28,3 @@ export interface Review {
   date: string; // Timestamp for when the review was created
 }
 
-export interface thumbnail{
-    building: string;
-    floor: number;
-    gender: 'Men' | 'Women' | 'Gender Neutral';
-    overall_rating: number;
-}
