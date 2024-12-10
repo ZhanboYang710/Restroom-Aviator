@@ -1,3 +1,4 @@
+
 // contributed by Zhanbo
 // restroom list display component
 
@@ -5,7 +6,6 @@ import React from "react";
 import BathroomCard from "./bathroom-card";
 import { restroom } from "@/types";
 import { useState, useEffect } from "react";
-import { getRestrooms } from "@/lib/getAllRestrooms";
 import styled from "styled-components";
 
 
@@ -29,6 +29,7 @@ const StyledDiv = styled.div`
   transition-duration: 150ms;
 `;
 
+// Define the type for the component props
 type BathroomListProps = {
     filters : {
         campus: string,
@@ -38,14 +39,18 @@ type BathroomListProps = {
     };
 };
 
+
 // retrieve restrooms based on selected filters
+
 export default function BathroomList( {filters}: BathroomListProps ) {
     const [restrooms, setRestrooms] = useState<restroom[]>([]);
     const [loading, setLoading] = useState(true);
 
     // heaviliy inspired by Akemi's old page.tsx
+
     // useEffect() function that handles the retriving of data
     // records, subject to changes of filters
+
     useEffect( () => {
         async function fetchRestrooms() {
             try {
