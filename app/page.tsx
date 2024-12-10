@@ -8,10 +8,6 @@ import GlobalStyle from '@/styles/globalStyles';
 import App from "next/app";
 
 
-const StyledDiv = styled.div`
-    margin: 0px 50px;
-`
-
 export default function Page() {
     const [filters, setFilters] = useState({
       campus: "",
@@ -24,10 +20,8 @@ export default function Page() {
         <>
         <GlobalStyle />
         <NewHeader />
-        <StyledDiv> 
             <BathroomFilter filters={filters} setFilters={setFilters} />
             <BathroomList filters={filters} />
-        </StyledDiv>
         </>
         
     );

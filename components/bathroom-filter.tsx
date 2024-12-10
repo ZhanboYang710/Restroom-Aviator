@@ -4,18 +4,25 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-    padding: 0 5vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #00ccff;
-`
+  padding: 0 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #2c3e50; /* Match the background color of the About page */
+`;
+
 const StyledLabel = styled.label`
-    color: black;
-`
+  color: #ffffff; /* Match the text color of the About page */
+`;
+
 const StyledSelect = styled.select`
-    width: 12vw;
-`
+  width: 12vw;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #2c3e50; /* Match the text color of the About page */
+`;
 
 
 type BathroomFilterProps = {
