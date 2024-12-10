@@ -1,6 +1,6 @@
-// Contact Page by Shangyuan Chen
+// pages/contact.tsx
 import styled from 'styled-components';
-import {AppHeader} from '../components/header';
+import NewHeader from '../components/header';
 
 const ContactWrapper = styled.div`
 {
@@ -29,11 +29,11 @@ const Form = styled.form`
 `;
 
 
-// Main Contact Page contents that contains all contributer's working email adresses and links to send email to them
+
 export default function Contact() {
     return (
         <>
-            <AppHeader />
+            <NewHeader />
             <ContactWrapper>
                 <Title>Contact Us</Title>
                 <Form>
