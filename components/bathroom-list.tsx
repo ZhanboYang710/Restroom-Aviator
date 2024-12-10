@@ -2,7 +2,6 @@ import React from "react";
 import BathroomCard from "./bathroom-card";
 import { restroom } from "@/types";
 import { useState, useEffect } from "react";
-import { getRestrooms } from "@/lib/getAllRestrooms";
 import styled from "styled-components";
 
 
