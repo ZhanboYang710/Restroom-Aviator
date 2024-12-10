@@ -1,9 +1,9 @@
-// pages/contact.tsx
+// Contact Page by Shangyuan Chen
 import styled from 'styled-components';
 import {AppHeader} from '../components/header';
 
 const ContactWrapper = styled.div`
-&&{
+{
     padding: 20px;
     max-width: 800px;
     margin: auto;
@@ -12,7 +12,7 @@ const ContactWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-&&{
+{
     font-size: 2.5rem;
     color: #2c3e50;
     text-align: center;
@@ -21,7 +21,7 @@ const Title = styled.h1`
 `;
 
 const Form = styled.form`
-&&{
+{
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -29,7 +29,7 @@ const Form = styled.form`
 `;
 
 
-
+// Main Contact Page contents that contains all contributer's working email adresses and links to send email to them
 export default function Contact() {
     return (
         <>
