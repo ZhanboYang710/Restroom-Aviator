@@ -1,9 +1,9 @@
-// pages/about.tsx
+// Shangyuan Chen: Contents of About Page, styling adjusted by Akemi
 "use client"
 import styled from 'styled-components';
 import NewHeader from '@/components/header';
 
-
+//styling wrappers
 const AboutWrapper = styled.div`
     padding: 20px;
     max-width: 800px;
@@ -25,6 +25,7 @@ const Description = styled.p`
     text-align: justify;
 `;
 
+//main About Contents
 export default function About() {
     return (
         <>
