@@ -1,4 +1,4 @@
-// pages/contact.tsx
+// Shangyuan Chen: Contents of Contact Page, styling adjusted by Akemi
 "use client"
 import styled from 'styled-components';
 import NewHeader from '@/components/header';
